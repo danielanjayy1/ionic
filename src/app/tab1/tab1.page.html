@@ -1,110 +1,122 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Home </ion-title>
+    <ion-title> Ionic Challenge</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
+      <ion-title size="large">Ionic Challenge</ion-title>
     </ion-toolbar>
   </ion-header>
-  <br />
-  <div class="form-home">
-    <ion-item>
-      <ion-label label="NIK" label-placement="floating"> </ion-label>
-      <ion-input fill="outline" type="number" placeholder="NIK"></ion-input>
-    </ion-item>
-    <br />
-    <ion-item>
-      <ion-label label="Nama" label-placement="floating"> </ion-label>
-      <ion-input fill="outline" placeholder="Nama"></ion-input>
-    </ion-item>
-    <br />
-    <ion-item>
-      <ion-label label="Tempat Lahir" label-placement="floating"> </ion-label>
-      <ion-input fill="outline" placeholder="Tempat Lahir"></ion-input>
-    </ion-item>
-    <br />
-    <ion-item>
-      <ion-label Position="floating">Tanggal Lahir</ion-label>
-      <ion-input
-        type="date"
-        fill="outline"
-        placeholder="Tanggal Lahir"
-      ></ion-input>
-    </ion-item>
-    <br />
-    <ion-select label="Gender" label-placement="floating" fill="outline">
-      <ion-select-option value="Pria">Pria</ion-select-option>
-      <ion-select-option value="Wanita">Wanita</ion-select-option>
-    </ion-select>
-    <br />
-    <ion-item>
-      <ion-label label="Alamat" label-placement="floating"> </ion-label>
-      <ion-input fill="outline" placeholder="Alamat"></ion-input>
-    </ion-item>
-    <br />
-    <ion-select label="Agama" label-placement="floating" fill="outline">
-      <ion-select-option value="Kristen">Kristen</ion-select-option>
-      <ion-select-option value="Katolik">Katolik</ion-select-option>
-      <ion-select-option value="Islam">Islam</ion-select-option>
-      <ion-select-option value="Hindu">Hindu</ion-select-option>
-      <ion-select-option value="Budha">Budha</ion-select-option>
-      <ion-select-option value="Konghucu">Konghucu</ion-select-option>
-    </ion-select>
-    <br />
-    <ion-select
-      label="Status Perkawinan"
-      label-placement="floating"
-      fill="outline"
-    >
-      <ion-select-option value="Belum Kawin">Belum Kawin</ion-select-option>
-      <ion-select-option value="Kawin">Kawin</ion-select-option>
-      <ion-select-option value="Cerai Hidup">Cerai Hidup</ion-select-option>
-      <ion-select-option value="Cerai Mati">Cerai Mati</ion-select-option>
-    </ion-select>
-    <br />
-    <ion-item>
-      <ion-label label="Pekerjaan" label-placement="floating"> </ion-label>
-      <ion-input fill="outline" placeholder="Pekerjaan"></ion-input>
-    </ion-item>
-    <br />
-    <ion-select
-      label="Kewarganegaraan"
-      label-placement="floating"
-      fill="outline"
-    >
-      <ion-select-option value="WNI">WNI</ion-select-option>
-      <ion-select-option value="WNA">WNA</ion-select-option>
-    </ion-select>
-    <br />
-    <ion-item>
-      <ion-label position="floating">Berlaku Hingga </ion-label>
-      <ion-input
-        type="date"
-        fill="outline"
-        placeholder="Berlaku Hingga"
-      ></ion-input>
-    </ion-item>
+  <h2>Daniel Anju Saputra Simbolon</h2>
+  <h2>21416255201053</h2>
+  <h2>IF21 C</h2>
+  <ion-content>
+    <form (ngSubmit)="submitForm()">
+      <ion-list>
+        <ion-item>
+          <ion-input
+            label="Nama"
+            [(ngModel)]="formData.nama"
+            labelPlacement="stacked"
+            [clearInput]="true"
+            placeholder="Input Data"
+          >
+          </ion-input>
+        </ion-item>
 
-    <!-- send -->
-    <ion-button expand="block" (click)="submitToWhatsApp"
-      ><ion-icon name="send"></ion-icon> Send To Whatsapp</ion-button
-    >
+        <ion-item>
+          <ion-input
+            label="NIK"
+            [(ngModel)]="formData.nik"
+            labelPlacement="stacked"
+            [clearOnEdit]="true"
+            placeholder="Input Data "
+          >
+          </ion-input>
+        </ion-item>
 
-    <!-- Telegram -->
-    <ion-button expand="block"
-      ><ion-icon name="send"></ion-icon> Send To Telegram</ion-button
-    >
+        <ion-item>
+          <ion-input
+            label="Alamat"
+            [(ngModel)]="formData.alamat"
+            labelPlacement="stacked"
+            [clearInput]="true"
+            placeholder="Input Data "
+          >
+          </ion-input>
+        </ion-item>
+      </ion-list>
 
-    <!-- email -->
-    <ion-button expand="block"
-      ><ion-icon name="send"></ion-icon> Send To Email</ion-button
-    >
-  </div>
+      <ion-list>
+        <ion-item>
+          <ion-input
+            label="Agama"
+            [(ngModel)]="formData.agama"
+            labelPlacement="stacked"
+            [clearInput]="true"
+            placeholder="Input Data "
+          >
+          </ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-input
+            label="Pekerjaan"
+            [(ngModel)]="formData.pekerjaan"
+            labelPlacement="stacked"
+            [clearOnEdit]="true"
+            placeholder="Input Data "
+          >
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Tempat/Tanggal Lahir"
+            [(ngModel)]="formData.tempat_tanggal_lahir"
+            labelPlacement="stacked"
+            [clearInput]="true"
+            placeholder="Input Data "
+          >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Golongan Darah"
+            [(ngModel)]="formData.golongan_darah"
+            labelPlacement="stacked"
+            [clearInput]="true"
+            placeholder="Input Data "
+          >
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Status Perkawinan:"
+            [(ngModel)]="formData.status_perkawinan"
+            labelPlacement="stacked"
+            [clearInput]="true"
+            placeholder="Input Data "
+          >
+          </ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="submitToWhatsApp()">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+          Send to WhatsApp
+        </ion-button>
+        <ion-button expand="block" (click)="submitTotelegram()">
+          <ion-icon name="send-outline"></ion-icon>Send to Telegram</ion-button
+        >
+        <ion-button expand="block" (click)="submitToWhatsApp()">
+          <ion-icon name="mail-outline"></ion-icon>Send to Email</ion-button
+        >
+      </ion-list>
+    </form>
+  </ion-content>
   <div id="map">
     <iframe
       width="100%"

@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { ToastController } from '@ionic/angular';
-import { StorageService } from '../services/storage.service';
-import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'app-tab1',
@@ -10,42 +7,53 @@ import { LocationService } from '../services/location.service';
 })
 export class Tab1Page {
   formData = {
-    nik: '',
     nama: '',
-    tempat_lahir: '',
-    tanggal_lahir: '',
-    gender: '',
+    nik: '',
     alamat: '',
     agama: '',
-    status: '',
     pekerjaan: '',
-    warga_negara: '',
-    berlaku: '',
+    tempat_tanggal_lahir: '',
+    golongan_darah: '',
+    status_perkawinan: '',
   };
-  constructor(
-    private Toast: ToastController,
-    private storage: StorageService,
-    private location: LocationService
-  ) {}
+
+  constructor() {}
+
+  submitForm() {
+    // Handle form submission logic here
+  }
 
   submitToWhatsApp() {
     const phoneNumber = '+6289604325305'; // Replace with your desired phone number
     const message =
-      `NIK: ${this.formData.nik}\n` +
       `Nama: ${this.formData.nama}\n` +
-      `Tempat Lahir: ${this.formData.tempat_lahir}\n` +
-      `Tanggal Lahir: ${this.formData.tanggal_lahir}\n` +
-      `gender: ${this.formData.gender}\n` +
-      `alamat: ${this.formData.alamat}\n` +
+      `NIK: ${this.formData.nik}\n` +
+      `Alamat: ${this.formData.alamat}\n` +
       `Agama: ${this.formData.agama}\n` +
-      `Status Kawin: ${this.formData.status}` +
       `Pekerjaan: ${this.formData.pekerjaan}\n` +
-      `Warga Negara: ${this.formData.warga_negara}\n` +
-      `Belaku Hingga: ${this.formData.berlaku}\n`;
+      `Tempat/Tanggal Lahir: ${this.formData.tempat_tanggal_lahir}\n` +
+      `Golongan Darah: ${this.formData.golongan_darah}\n` +
+      `Status Perkawinan: ${this.formData.status_perkawinan}`;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    const whatsappUrl = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
-    window.open(whatsappUrl, '_system');
+    window.open(whatsappUrl, '_blank');
+  }
+
+  submitTotelegram() {
+    const phoneNumber = '+6281211719875'; // Replace with your desired phone number
+    const message =
+      `Nama: ${this.formData.nama}\n` +
+      `NIK: ${this.formData.nik}\n` +
+      `Alamat: ${this.formData.alamat}\n` +
+      `Agama: ${this.formData.agama}\n` +
+      `Pekerjaan: ${this.formData.pekerjaan}\n` +
+      `Tempat/Tanggal Lahir: ${this.formData.tempat_tanggal_lahir}\n` +
+      `Golongan Darah: ${this.formData.golongan_darah}\n` +
+      `Status Perkawinan: ${this.formData.status_perkawinan}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const telegramUrl = `https://web.telegram.org/a/=&text=${encodedMessage}`;
   }
 }
