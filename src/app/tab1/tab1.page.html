@@ -1,17 +1,118 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title> Home </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br />
+  <div class="form-home">
+    <ion-item>
+      <ion-label label="NIK" label-placement="floating"> </ion-label>
+      <ion-input fill="outline" type="number" placeholder="NIK"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label label="Nama" label-placement="floating"> </ion-label>
+      <ion-input fill="outline" placeholder="Nama"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label label="Tempat Lahir" label-placement="floating"> </ion-label>
+      <ion-input fill="outline" placeholder="Tempat Lahir"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label Position="floating">Tanggal Lahir</ion-label>
+      <ion-input
+        type="date"
+        fill="outline"
+        placeholder="Tanggal Lahir"
+      ></ion-input>
+    </ion-item>
+    <br />
+    <ion-select label="Gender" label-placement="floating" fill="outline">
+      <ion-select-option value="Pria">Pria</ion-select-option>
+      <ion-select-option value="Wanita">Wanita</ion-select-option>
+    </ion-select>
+    <br />
+    <ion-item>
+      <ion-label label="Alamat" label-placement="floating"> </ion-label>
+      <ion-input fill="outline" placeholder="Alamat"></ion-input>
+    </ion-item>
+    <br />
+    <ion-select label="Agama" label-placement="floating" fill="outline">
+      <ion-select-option value="Kristen">Kristen</ion-select-option>
+      <ion-select-option value="Katolik">Katolik</ion-select-option>
+      <ion-select-option value="Islam">Islam</ion-select-option>
+      <ion-select-option value="Hindu">Hindu</ion-select-option>
+      <ion-select-option value="Budha">Budha</ion-select-option>
+      <ion-select-option value="Konghucu">Konghucu</ion-select-option>
+    </ion-select>
+    <br />
+    <ion-select
+      label="Status Perkawinan"
+      label-placement="floating"
+      fill="outline"
+    >
+      <ion-select-option value="Belum Kawin">Belum Kawin</ion-select-option>
+      <ion-select-option value="Kawin">Kawin</ion-select-option>
+      <ion-select-option value="Cerai Hidup">Cerai Hidup</ion-select-option>
+      <ion-select-option value="Cerai Mati">Cerai Mati</ion-select-option>
+    </ion-select>
+    <br />
+    <ion-item>
+      <ion-label label="Pekerjaan" label-placement="floating"> </ion-label>
+      <ion-input fill="outline" placeholder="Pekerjaan"></ion-input>
+    </ion-item>
+    <br />
+    <ion-select
+      label="Kewarganegaraan"
+      label-placement="floating"
+      fill="outline"
+    >
+      <ion-select-option value="WNI">WNI</ion-select-option>
+      <ion-select-option value="WNA">WNA</ion-select-option>
+    </ion-select>
+    <br />
+    <ion-item>
+      <ion-label position="floating">Berlaku Hingga </ion-label>
+      <ion-input
+        type="date"
+        fill="outline"
+        placeholder="Berlaku Hingga"
+      ></ion-input>
+    </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <!-- send -->
+    <ion-button expand="block" (click)="submitToWhatsApp"
+      ><ion-icon name="send"></ion-icon> Send To Whatsapp</ion-button
+    >
+
+    <!-- Telegram -->
+    <ion-button expand="block"
+      ><ion-icon name="send"></ion-icon> Send To Telegram</ion-button
+    >
+
+    <!-- email -->
+    <ion-button expand="block"
+      ><ion-icon name="send"></ion-icon> Send To Email</ion-button
+    >
+  </div>
+
+  <div id="map">
+    <iframe
+      width="100%"
+      height="300"
+      frameborder="5"
+      style="border: 5"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7298272946355!2d<longitude>!3d<latitude>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f41a6448bb97%3A0x8f260eaf1e4ab77!2sJalan%20Pantai%20Pandan%20Kec.%20Samarinda%20Ulu%2C%20Kota%20Samarinda%2C%20Kalimantan%20Timur%2075157!5e0!3m2!1sen!2sid!4v1623400737403!5m2!1sen!2sid"
+      allowfullscreen
+    ></iframe>
+  </div>
 </ion-content>
